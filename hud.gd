@@ -5,6 +5,7 @@ signal start_game
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	$PauseMenu.hide_all()
 	pass # Replace with function body.
 
 
@@ -43,6 +44,7 @@ func update_top_score(score):
 func update_dodged(dodged):
 	$DodgeLabel.text = str(dodged)
 
+
 func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	$TopScoreNum.hide()
@@ -50,10 +52,23 @@ func _on_start_button_pressed() -> void:
 	start_game.emit()
 
 
-
 func _on_message_timer_timeout() -> void:
 	$Message.hide()
 
 
-func _on_quit_button_pressed() -> void:
-	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+func _on_setting_button_pressed() -> void:
+	$StartButton.hide()
+	$TopScoreNum.hide()
+	$TopScoreText.hide()
+	$DodgeLabel.hide()
+	$Message.hide()
+	$PauseMenu.show_all()
+
+
+func _on_pause_menu_close_pause_menu() -> void:
+	$PauseMenu.hide_all()
+	$StartButton.show()
+	$TopScoreNum.show()
+	$TopScoreText.show()
+	$DodgeLabel.show()
+	$Message.show()

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfa1fh70afpio"]
+
+[ext_resource type="FontFile" uid="uid://bjcfht4xj8c8j" path="res://fonts/Xolonium-Regular.ttf" id="1_2d4lf"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_htr66"]
+[ext_resource type="Script" path="res://music_h_slider.gd" id="3_8i13i"]
+[ext_resource type="Script" path="res://sfxh_slider.gd" id="3_xthus"]
+
+[node name="PauseMenu" type="Node"]
+script = ExtResource("1_htr66")
+
+[node name="PauseVBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -161.5
+offset_right = 118.0
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2d4lf")
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="SaveButton" type="Button" parent="PauseVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2d4lf")
+theme_override_font_sizes/font_size = 40
+text = "Save
+"
+
+[node name="QuitButton" type="Button" parent="PauseVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2d4lf")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="MusicVBoxContainer" type="VBoxContainer" parent="PauseVBoxContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="PauseVBoxContainer/MusicVBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2d4lf")
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="MusicHSlider" type="HSlider" parent="PauseVBoxContainer/MusicVBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("3_8i13i")
+
+[node name="SFXVBoxContainer2" type="VBoxContainer" parent="PauseVBoxContainer"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="PauseVBoxContainer/SFXVBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2d4lf")
+theme_override_font_sizes/font_size = 40
+text = "Sound"
+
+[node name="SFXHSlider" type="HSlider" parent="PauseVBoxContainer/SFXVBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("3_xthus")
+
+[connection signal="pressed" from="PauseVBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseVBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="PauseVBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="PauseVBoxContainer/MusicVBoxContainer/MusicHSlider" to="PauseVBoxContainer/MusicVBoxContainer/MusicHSlider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="PauseVBoxContainer/SFXVBoxContainer2/SFXHSlider" to="PauseVBoxContainer/SFXVBoxContainer2/SFXHSlider" method="release_focus"]
+[connection signal="value_changed" from="PauseVBoxContainer/SFXVBoxContainer2/SFXHSlider" to="PauseVBoxContainer/SFXVBoxContainer2/SFXHSlider" method="_on_value_changed"]

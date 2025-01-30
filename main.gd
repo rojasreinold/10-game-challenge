@@ -34,7 +34,7 @@ func new_game():
 	dodged = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
-	#$Music.play()
+	$Music.play()
 	
 	$HUD.update_score(score)
 	$HUD.update_dodged("Dodged: " + str(dodged))
@@ -44,7 +44,6 @@ func new_game():
 	
 	
 func _on_start_timer_timeout():
-
 	$MobTimer.start()
 	$ScoreTimer.start()
 	
