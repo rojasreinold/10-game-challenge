@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfa1fh70afpio"]
+[gd_scene load_steps=7 format=3 uid="uid://bfa1fh70afpio"]
 
 [ext_resource type="FontFile" uid="uid://bjcfht4xj8c8j" path="res://fonts/Xolonium-Regular.ttf" id="1_2d4lf"]
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_htr66"]
 [ext_resource type="Script" path="res://music_h_slider.gd" id="3_8i13i"]
 [ext_resource type="Script" path="res://sfxh_slider.gd" id="3_xthus"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_rep81"]
+action = &"quit_game"
+
+[sub_resource type="Shortcut" id="Shortcut_txxqe"]
+events = [SubResource("InputEventAction_rep81")]
 
 [node name="PauseMenu" type="Node"]
 script = ExtResource("1_htr66")
@@ -38,6 +44,7 @@ text = "Save
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2d4lf")
 theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_txxqe")
 text = "Quit"
 
 [node name="MusicVBoxContainer" type="VBoxContainer" parent="PauseVBoxContainer"]

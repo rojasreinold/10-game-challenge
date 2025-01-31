@@ -10,11 +10,11 @@ action = &"start_game"
 [sub_resource type="Shortcut" id="Shortcut_8wlcs"]
 events = [SubResource("InputEventAction_gmhl3")]
 
-[sub_resource type="InputEventAction" id="InputEventAction_1y2pq"]
-action = &"quit_game"
+[sub_resource type="InputEventAction" id="InputEventAction_nw1uy"]
+action = &"pause_menu"
 
-[sub_resource type="Shortcut" id="Shortcut_066yw"]
-events = [SubResource("InputEventAction_1y2pq")]
+[sub_resource type="Shortcut" id="Shortcut_sgjeb"]
+events = [SubResource("InputEventAction_nw1uy")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_2mnwi")
@@ -109,27 +109,23 @@ theme_override_font_sizes/font_size = 64
 text = "0
 "
 
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 437.0
-offset_right = 476.0
-offset_bottom = 57.0
-theme_override_fonts/font = ExtResource("2_m6jrm")
-theme_override_font_sizes/font_size = 40
-shortcut = SubResource("Shortcut_066yw")
-text = "X"
-
 [node name="SettingButton" type="Button" parent="."]
-offset_left = 394.0
-offset_right = 434.0
-offset_bottom = 57.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 61.0
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_m6jrm")
 theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_sgjeb")
 text = "S"
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_7gqrx")]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="SettingButton" to="." method="_on_setting_button_pressed"]
 [connection signal="close_pause_menu" from="PauseMenu" to="." method="_on_pause_menu_close_pause_menu"]
