@@ -63,6 +63,7 @@ func _on_setting_button_pressed() -> void:
 	$DodgeLabel.hide()
 	$Message.hide()
 	$PauseMenu.show_all()
+	get_tree().paused = true
 
 
 func _on_pause_menu_close_pause_menu() -> void:
@@ -72,3 +73,4 @@ func _on_pause_menu_close_pause_menu() -> void:
 	$TopScoreText.show()
 	$DodgeLabel.show()
 	$Message.show()
+	get_tree().paused = false
