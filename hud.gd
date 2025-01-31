@@ -57,20 +57,12 @@ func _on_message_timer_timeout() -> void:
 
 
 func _on_setting_button_pressed() -> void:
-	$StartButton.hide()
-	$TopScoreNum.hide()
-	$TopScoreText.hide()
-	$DodgeLabel.hide()
-	$Message.hide()
+	$PauseCoverRect.show()
 	$PauseMenu.show_all()
 	get_tree().paused = true
 
 
 func _on_pause_menu_close_pause_menu() -> void:
+	$PauseCoverRect.hide()
 	$PauseMenu.hide_all()
-	$StartButton.show()
-	$TopScoreNum.show()
-	$TopScoreText.show()
-	$DodgeLabel.show()
-	$Message.show()
 	get_tree().paused = false
