@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://44d8lmx5c3ua"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="ArenaBox" type="Line2D" parent="."]
+points = PackedVector2Array(40, 40, 40, 1040, 1880, 1040, 1880, 40, 40, 40)
+width = 6.0
+
+[node name="MiddleDivider" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -179.0
+offset_right = 245.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="ColorRect" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect2" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect3" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect4" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect5" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect6" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect7" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect8" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect9" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect10" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect11" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect12" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect13" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect14" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect15" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ColorRect16" type="ColorRect" parent="MiddleDivider"]
+custom_minimum_size = Vector2(6, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Player1Score" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 40.0
+offset_right = -177.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="Player2Score" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 177.0
+offset_top = 40.0
+offset_right = 223.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 80
+text = "0"
