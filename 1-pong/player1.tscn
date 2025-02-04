@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3vuoka5r2tga"]
+[gd_scene load_steps=3 format=3 uid="uid://c3vuoka5r2tga"]
+
+[ext_resource type="Script" path="res://player_1.gd" id="1_tvnoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vru3m"]
 size = Vector2(22, 53)
 
 [node name="Player" type="Area2D"]
 position = Vector2(80, 577)
+script = ExtResource("1_tvnoj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, 26.5)
