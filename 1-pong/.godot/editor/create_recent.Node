@@ -1,8 +1,10 @@
+ColorRect
+CollisionShape2D
+Sprite2D
+RigidBody2D
 Label
 VBoxContainer
-ColorRect
 Area2D
 Line2D
 CanvasLayer
-CollisionShape2D
 Node
