@@ -5,3 +5,5 @@ res://player1.tscn
 res://player_1.gd
 res://main.gd
 res://ball.tscn
+res://ball.gd
+res://player2.tscn

@@ -22,3 +22,7 @@ func _process(delta: float) -> void:
 	
 	#TODO: clamp position to the border by creating a new smaller vectors:
 	position = position.clamp(Vector2.ZERO, screen_size)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print("player1 _on_body_entered") # Replace with function body.
