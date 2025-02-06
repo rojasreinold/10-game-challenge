@@ -1,10 +1,18 @@
-[gd_scene format=3 uid="uid://44d8lmx5c3ua"]
+[gd_scene load_steps=5 format=3 uid="uid://44d8lmx5c3ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knecf"]
+size = Vector2(1860, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wyhe"]
+size = Vector2(1860, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j4mi"]
+size = Vector2(39, 1115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lipvd"]
+size = Vector2(44.25, 1135)
 
 [node name="HUD" type="CanvasLayer"]
-
-[node name="ArenaBox" type="Line2D" parent="."]
-points = PackedVector2Array(40, 40, 40, 1040, 1880, 1040, 1880, 40, 40, 40)
-width = 6.0
 
 [node name="MiddleDivider" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -123,3 +131,53 @@ offset_bottom = 150.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 80
 text = "0"
+
+[node name="DownWall" type="Area2D" parent="."]
+position = Vector2(0, 1040)
+
+[node name="ColorRect" type="ColorRect" parent="DownWall"]
+offset_left = 30.0
+offset_right = 1890.0
+offset_bottom = 10.0
+
+[node name="DownWallCollisionShape2D" type="CollisionShape2D" parent="DownWall"]
+position = Vector2(960, 0)
+shape = SubResource("RectangleShape2D_knecf")
+
+[node name="UpWall" type="Area2D" parent="."]
+position = Vector2(0, 25)
+
+[node name="ColorRect" type="ColorRect" parent="UpWall"]
+offset_left = 30.0
+offset_right = 1890.0
+offset_bottom = 10.0
+
+[node name="UpWallCollisionShape2D" type="CollisionShape2D" parent="UpWall"]
+position = Vector2(960, 0.5)
+shape = SubResource("RectangleShape2D_0wyhe")
+
+[node name="LeftWall" type="Area2D" parent="."]
+position = Vector2(1, 1036)
+
+[node name="ColorRect" type="ColorRect" parent="LeftWall"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftWallCollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(14, -503)
+shape = SubResource("RectangleShape2D_8j4mi")
+
+[node name="RightWall" type="Area2D" parent="."]
+position = Vector2(379, 348)
+
+[node name="ColorRect" type="ColorRect" parent="RightWall"]
+visible = false
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 176.0
+offset_bottom = 124.0
+
+[node name="RightWallCollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(1529.88, 193.5)
+shape = SubResource("RectangleShape2D_lipvd")

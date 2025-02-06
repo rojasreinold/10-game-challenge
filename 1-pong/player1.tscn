@@ -6,7 +6,7 @@
 size = Vector2(22, 53)
 
 [node name="Player1" type="Area2D"]
-position = Vector2(80, 577)
+position = Vector2(80, 540)
 script = ExtResource("1_tvnoj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

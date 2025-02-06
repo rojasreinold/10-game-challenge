@@ -1,7 +1,8 @@
+CollisionShape2D
+ColorRect
+DirectionalLight2D
 Area2D
 RigidBody2D
-ColorRect
-CollisionShape2D
 Sprite2D
 Label
 VBoxContainer
