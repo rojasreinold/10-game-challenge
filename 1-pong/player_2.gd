@@ -2,7 +2,7 @@ extends Area2D
 
 @export var speed = 400
 var screen_size
-var player_name = "p1"
+var player_name = "p2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
