@@ -20,5 +20,4 @@ func _process(delta: float) -> void:
 	velocity = velocity.normalized() * speed
 	position += velocity * delta
 	
-	#TODO: clamp position to the border by creating a new smaller vectors:
-	position = position.clamp(Vector2.ZERO, screen_size)
+	position = position.clamp(Vector2(0,62), Vector2(1920, 1013))

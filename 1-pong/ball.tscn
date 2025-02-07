@@ -5,17 +5,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvm1k"]
 
 [node name="Ball" type="Area2D"]
+position = Vector2(960, 540)
 script = ExtResource("1_bjnor")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(970, 550)
 shape = SubResource("RectangleShape2D_uvm1k")
 
 [node name="BallRect" type="ColorRect" parent="."]
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 980.0
-offset_bottom = 560.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 

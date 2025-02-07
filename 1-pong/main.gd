@@ -24,7 +24,7 @@ func on_player_scored(player_name: String) -> void:
 		$HUD/Player1Score.text = str(int($HUD/Player1Score.text) + 1)
 	if player_name == "p2":
 		$HUD/Player2Score.text = str(int($HUD/Player2Score.text) + 1)
-		$Ball.reset_ball()
+	$Ball.reset_ball()
 		
 func game_end():
 	pass

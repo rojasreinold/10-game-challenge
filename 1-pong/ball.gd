@@ -4,12 +4,15 @@ signal player_scored
 
 const DEFAULT_SPEED = 400.0
 
+var DEFAULT_POSITION = Vector2(960,540)
+
 var _speed := DEFAULT_SPEED
 var direction := Vector2.LEFT
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset_ball()
+	print(position)
 	pass # Replace with function body.
 
 
@@ -38,3 +41,4 @@ func _on_area_entered(area: Area2D) -> void:
 func reset_ball() -> void:
 	direction = Vector2(-1, randf_range(-1,1))
 	_speed = DEFAULT_SPEED
+	position = DEFAULT_POSITION +  direction
