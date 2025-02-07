@@ -1,8 +1,7 @@
-res://main.tscn
 res://player1.tscn
-res://ball.tscn
-res://hud.tscn
-res://player2.tscn
 res://ball.gd
-res://player_1.gd
-res://player_2.gd
+res://hud.tscn
+res://main.tscn
+res://main.gd
+res://ball.tscn
+res://player2.tscn
