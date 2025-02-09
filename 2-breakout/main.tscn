@@ -17,7 +17,7 @@ size = Vector2(853, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7c7"]
 size = Vector2(893, 25)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["Persist"]]
 script = ExtResource("1_jablm")
 
 [node name="BlackBackground" type="ColorRect" parent="."]

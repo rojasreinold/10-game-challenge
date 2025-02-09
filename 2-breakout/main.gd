@@ -3,9 +3,11 @@ var block_scene: Resource = preload("res://block.tscn")
 var screen_size: Vector2
 var lives: int
 var score: int
+var highscore: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HUD.load_game()
 	$Ball.ball_missed.connect(on_ball_missed)
 	screen_size = get_viewport().size
 	new_game()
@@ -13,6 +15,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func save() -> Dictionary :
+	var save_dict := {
+		"highscore" : highscore
+	}
+	print(save_dict)
+	return save_dict
 	
 func new_game() -> void:
 	get_tree().call_group("Blocks", "queue_free")
@@ -54,6 +63,7 @@ func setup_blocks() -> void:
 func on_ball_missed() -> void:
 	lives -= 1
 	if lives <=0:
+
 		new_game()
 	else:
 		$HUD.update_lives(lives)
@@ -61,4 +71,6 @@ func on_ball_missed() -> void:
 func on_block_hit() -> void:
 	score +=1
 	$HUD.update_score(score)
-		
+	if score > highscore:
+		highscore = score
+		$HUD.update_highscore(score)
