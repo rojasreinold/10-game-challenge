@@ -3,6 +3,7 @@ extends Area2D
 signal ball_missed
 
 const DEFAULT_SPEED = 400
+const DEFAULT_POSITION = Vector2(960,540)
 
 var direction := Vector2.DOWN
 var _speed := DEFAULT_SPEED
@@ -22,13 +23,20 @@ func _on_area_entered(area: Area2D) -> void:
 	print(area)
 	if area.name == "Player1":
 		direction = Vector2(randf_range(-1,1), -1)
-	if area.name == "Ceiling":
-		direction = Vector2(randf_range(-1,1), 1)
+
 	if area.name.contains("Block"):
 		direction = Vector2(randf_range(-1,1), 1)
 		_speed += 20
-		print("hit block")
 	
 	if area.name == "LeftWall" or area.name == "RightWall":
-		print(direction)
 		direction = Vector2(-direction[0], direction[1])
+		
+	if area.name == "Ceiling":
+		direction = Vector2(randf_range(-1,1), 1)
+	if area.name == "Floor":
+		ball_missed.emit()
+		reset_ball()
+		
+func reset_ball() -> void:
+	direction = Vector2.DOWN
+	position = DEFAULT_POSITION

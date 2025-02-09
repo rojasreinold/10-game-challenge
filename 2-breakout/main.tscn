@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl11dm106fmiy"]
+[gd_scene load_steps=9 format=3 uid="uid://cl11dm106fmiy"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jablm"]
 [ext_resource type="PackedScene" uid="uid://xsakycpv684n" path="res://player_1.tscn" id="2_o26g7"]
@@ -14,8 +14,13 @@ size = Vector2(30, 1125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_si8j2"]
 size = Vector2(853, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf7c7"]
+size = Vector2(893, 25)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_jablm")
+
+[node name="HUD" parent="." instance=ExtResource("4_age16")]
 
 [node name="Player1" parent="." instance=ExtResource("2_o26g7")]
 
@@ -60,4 +65,14 @@ offset_top = -4.0
 offset_right = 420.0
 offset_bottom = 4.0
 
-[node name="HUD" parent="." instance=ExtResource("4_age16")]
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(960, 1054)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-1.5, 8.5)
+shape = SubResource("RectangleShape2D_sf7c7")
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0

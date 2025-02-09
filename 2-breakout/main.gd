@@ -1,22 +1,25 @@
 extends Node
-var block_scene = preload("res://block.tscn")
-var screen_size
+var block_scene: Resource = preload("res://block.tscn")
+var screen_size: Vector2
+var lives: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Ball.ball_missed.connect(on_ball_missed)
 	screen_size = get_viewport().size
 	new_game()
-
-	print(screen_size)
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 func new_game() -> void:
+	setup_blocks()
+	lives = 3
+	$HUD.update_score(0)
+	$HUD.update_lives(3)
 	
+func setup_blocks() -> void:
 	#loop creating a row. 14 nodes. block is 100
 	var block_horizontal_space = 4
 	var block_vertical_space = 4
@@ -45,3 +48,11 @@ func new_game() -> void:
 			block_pos_x += 100 +block_horizontal_space
 		y += 1
 		block_pos_y += 24+ block_vertical_space
+		
+func on_ball_missed() -> void:
+	lives -= 1
+	if lives <=0:
+		new_game()
+	else:
+		$HUD.update_lives(lives)
+		
