@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl11dm106fmiy"]
+[gd_scene load_steps=8 format=3 uid="uid://cl11dm106fmiy"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jablm"]
 [ext_resource type="PackedScene" uid="uid://xsakycpv684n" path="res://player_1.tscn" id="2_o26g7"]
 [ext_resource type="PackedScene" uid="uid://b8uumk3r3buwq" path="res://ball.tscn" id="3_mj0gw"]
+[ext_resource type="PackedScene" uid="uid://du88rix4rguap" path="res://hud.tscn" id="4_age16"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7cls"]
 size = Vector2(37, 1122)
@@ -58,3 +59,5 @@ offset_left = -420.0
 offset_top = -4.0
 offset_right = 420.0
 offset_bottom = 4.0
+
+[node name="HUD" parent="." instance=ExtResource("4_age16")]

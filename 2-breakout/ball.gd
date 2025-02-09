@@ -26,6 +26,7 @@ func _on_area_entered(area: Area2D) -> void:
 		direction = Vector2(randf_range(-1,1), 1)
 	if area.name.contains("Block"):
 		direction = Vector2(randf_range(-1,1), 1)
+		_speed += 20
 		print("hit block")
 	
 	if area.name == "LeftWall" or area.name == "RightWall":
