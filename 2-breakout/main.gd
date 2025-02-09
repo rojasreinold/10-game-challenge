@@ -8,6 +8,7 @@ var highscore: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HUD.load_game()
+	$Music.play()
 	$Ball.ball_missed.connect(on_ball_missed)
 	screen_size = get_viewport().size
 	new_game()
@@ -20,7 +21,6 @@ func save() -> Dictionary :
 	var save_dict := {
 		"highscore" : highscore
 	}
-	print(save_dict)
 	return save_dict
 	
 func new_game() -> void:

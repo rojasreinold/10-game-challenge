@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl11dm106fmiy"]
+[gd_scene load_steps=10 format=3 uid="uid://cl11dm106fmiy"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jablm"]
 [ext_resource type="PackedScene" uid="uid://xsakycpv684n" path="res://player_1.tscn" id="2_o26g7"]
 [ext_resource type="PackedScene" uid="uid://b8uumk3r3buwq" path="res://ball.tscn" id="3_mj0gw"]
 [ext_resource type="PackedScene" uid="uid://du88rix4rguap" path="res://hud.tscn" id="4_age16"]
+[ext_resource type="AudioStream" uid="uid://80mqsotuujs1" path="res://art/House In a Forest Loop.ogg" id="5_kq65m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7cls"]
 size = Vector2(37, 1122)
@@ -81,3 +82,7 @@ shape = SubResource("RectangleShape2D_sf7c7")
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kq65m")
+parameters/looping = true
