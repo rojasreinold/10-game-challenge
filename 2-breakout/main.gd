@@ -2,6 +2,7 @@ extends Node
 var block_scene: Resource = preload("res://block.tscn")
 var screen_size: Vector2
 var lives: int
+var score: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +15,7 @@ func _process(delta: float) -> void:
 	pass
 	
 func new_game() -> void:
+	get_tree().call_group("Blocks", "queue_free")
 	setup_blocks()
 	lives = 3
 	$HUD.update_score(0)
@@ -27,8 +29,7 @@ func setup_blocks() -> void:
 	var horz_block_count = 8
 	var vert_block_count = 4
 	
-	#(1920 % (100+4 ) )/2
-	# 
+
 	var horz_screen_buffer = screen_size[0]/2  - ((100) + block_horizontal_space) * horz_block_count/2
 
 	var x = 0
@@ -43,7 +44,7 @@ func setup_blocks() -> void:
 			block.position = Vector2(block_pos_x, block_pos_y)
 			block.name = str(block_pos_x) + "Block" + str(block_pos_y) 
 			add_child(block)
-			print(block.position)
+			block.block_hit.connect(on_block_hit)
 			x += 1
 			block_pos_x += 100 +block_horizontal_space
 		y += 1
@@ -55,4 +56,8 @@ func on_ball_missed() -> void:
 		new_game()
 	else:
 		$HUD.update_lives(lives)
+		
+func on_block_hit() -> void:
+	score +=1
+	$HUD.update_score(score)
 		
