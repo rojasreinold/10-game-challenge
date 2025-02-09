@@ -42,7 +42,8 @@ func setup_blocks() -> void:
 		while x < 8:
 			var block = block_scene.instantiate()
 			block.position = Vector2(block_pos_x, block_pos_y)
-			block.name = str(block_pos_x) + "Block" + str(block_pos_y) 
+			block.name = str(block_pos_x) + "Block" + str(block_pos_y)
+			block.set_color(y)
 			add_child(block)
 			block.block_hit.connect(on_block_hit)
 			x += 1

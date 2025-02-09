@@ -1,5 +1,12 @@
 extends Area2D
 signal block_hit
+var colors: Dictionary = {
+	0: Color.DARK_RED,
+	1: Color.ORANGE,
+	2: Color.YELLOW,
+	3: Color.GREEN_YELLOW,
+	4: Color.SKY_BLUE
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,3 +22,6 @@ func _on_area_entered(area: Area2D) -> void:
 	block_hit.emit()
 	queue_free()
 	pass
+
+func set_color(color_num: int):
+	$ColorRect.set_color(colors[color_num])

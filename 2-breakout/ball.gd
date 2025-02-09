@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	position += _speed * delta * direction
 	
 func _on_area_entered(area: Area2D) -> void:
-	print(area)
 	if area.name == "Player1":
 		direction = Vector2(randf_range(-1,1), -1)
 
