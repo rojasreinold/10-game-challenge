@@ -5,14 +5,12 @@ signal ball_missed
 const DEFAULT_SPEED = 400
 const DEFAULT_POSITION = Vector2(960,540)
 
-var direction := Vector2.DOWN
+var direction: Vector2 = Vector2(randf_range(-1,1), 1)
 var _speed := DEFAULT_SPEED
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,5 +35,5 @@ func _on_area_entered(area: Area2D) -> void:
 		reset_ball()
 		
 func reset_ball() -> void:
-	direction = Vector2.DOWN
+	direction = Vector2(randf_range(-1,1), 1)
 	position = DEFAULT_POSITION
