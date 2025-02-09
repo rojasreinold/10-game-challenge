@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl11dm106fmiy"]
+[gd_scene load_steps=7 format=3 uid="uid://cl11dm106fmiy"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jablm"]
 [ext_resource type="PackedScene" uid="uid://xsakycpv684n" path="res://player_1.tscn" id="2_o26g7"]
 [ext_resource type="PackedScene" uid="uid://b8uumk3r3buwq" path="res://ball.tscn" id="3_mj0gw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7cls"]
-size = Vector2(25, 1122)
+size = Vector2(37, 1122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avtvl"]
-size = Vector2(20, 1125)
+size = Vector2(30, 1125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si8j2"]
+size = Vector2(853, 14)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jablm")
@@ -21,7 +24,7 @@ script = ExtResource("1_jablm")
 position = Vector2(534, 540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-7.5, 0)
+position = Vector2(-13.5, 0)
 shape = SubResource("RectangleShape2D_o7cls")
 
 [node name="ColorRect" type="ColorRect" parent="LeftWall"]
@@ -34,7 +37,7 @@ offset_bottom = 540.0
 position = Vector2(1381, 540)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(5, -22.5)
+position = Vector2(10, -22.5)
 shape = SubResource("RectangleShape2D_avtvl")
 
 [node name="ColorRect" type="ColorRect" parent="RightWall"]
@@ -42,3 +45,16 @@ offset_left = -5.0
 offset_top = -540.0
 offset_right = 5.0
 offset_bottom = 540.0
+
+[node name="Ceiling" type="Area2D" parent="."]
+position = Vector2(956, 107)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(-0.5, -3)
+shape = SubResource("RectangleShape2D_si8j2")
+
+[node name="ColorRect" type="ColorRect" parent="Ceiling"]
+offset_left = -420.0
+offset_top = -4.0
+offset_right = 420.0
+offset_bottom = 4.0

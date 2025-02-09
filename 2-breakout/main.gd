@@ -30,7 +30,8 @@ func new_game() -> void:
 
 	var x = 0
 	var y = 0 
-	var block_pos_y = 24/2 +4
+	var block_pos_y = 140
+	
 	while y < 5:
 		x = 0
 		var block_pos_x = 100/2 + horz_screen_buffer
