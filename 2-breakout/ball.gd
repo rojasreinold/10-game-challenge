@@ -19,7 +19,16 @@ func _process(delta: float) -> void:
 	position += _speed * delta * direction
 	
 func _on_area_entered(area: Area2D) -> void:
+	print(area)
 	if area.name == "Player1":
 		direction = Vector2(randf_range(-1,1), -1)
-	if area.name == "Block":
+	if area.name.contains("Block"):
 		direction = Vector2(randf_range(-1,1), 1)
+		print("hit block")
+	
+	if area.name == "LeftWall":
+		print(direction)
+		direction = Vector2(-direction[0], direction[1])
+		
+	if area.name == "RightWall":
+		direction = Vector2(direction[0], -direction[1])
