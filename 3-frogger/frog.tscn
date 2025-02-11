@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://vsi4a3gn85jp"]
+
+[ext_resource type="Texture2D" uid="uid://bxj4rh5tudneb" path="res://icon.svg" id="1_2fxy7"]
+[ext_resource type="Script" path="res://frog.gd" id="2_q08d0"]
+
+[node name="Frog" type="Sprite2D"]
+position = Vector2(97.0975, 231.996)
+scale = Vector2(0.123477, 0.124941)
+texture = ExtResource("1_2fxy7")
+script = ExtResource("2_q08d0")
