@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://vsi4a3gn85jp"]
+[gd_scene load_steps=4 format=3 uid="uid://vsi4a3gn85jp"]
 
-[ext_resource type="Texture2D" uid="uid://bxj4rh5tudneb" path="res://icon.svg" id="1_2fxy7"]
 [ext_resource type="Script" path="res://frog.gd" id="2_q08d0"]
+[ext_resource type="Texture2D" uid="uid://dxydaq2k3kimf" path="res://assets/2025-02-10-Frogger-game.png" id="2_tx547"]
 
-[node name="Frog" type="Sprite2D"]
-position = Vector2(97.0975, 231.996)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b8qo"]
+size = Vector2(16.1974, 16.0076)
+
+[node name="Frog" type="CharacterBody2D"]
+position = Vector2(104, 232)
 scale = Vector2(0.123477, 0.124941)
-texture = ExtResource("1_2fxy7")
 script = ExtResource("2_q08d0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.00012207)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_8b8qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("2_tx547")
