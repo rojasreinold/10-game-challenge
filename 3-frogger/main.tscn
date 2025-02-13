@@ -32,5 +32,6 @@ tile_map_data = PackedByteArray("AAABAA0AAAABAAAAAAAAAA0AAAABAAAAAAACAA0AAAABAAA
 tile_set = SubResource("TileSet_6xhc2")
 
 [node name="Frog" parent="." instance=ExtResource("2_7twhs")]
+position = Vector2(170, 310)
 
 [node name="HUD" parent="." instance=ExtResource("3_ie53x")]

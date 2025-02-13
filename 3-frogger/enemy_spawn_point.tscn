@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b66eqxa2nhcxv"]
+
+[ext_resource type="Script" path="res://marker_2d.gd" id="1_sluxj"]
+
+[node name="EnemySpawnPoint" type="Marker2D"]
+position = Vector2(107, 83)
+script = ExtResource("1_sluxj")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
