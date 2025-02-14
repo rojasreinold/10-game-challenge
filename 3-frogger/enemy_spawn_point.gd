@@ -3,7 +3,7 @@ class_name EnemySpawnPoint
 
 var road_array = Array()
 var water_array = Array()
-@export_enum("LEFT:-1", "RIGHT:1") var direction: int
+@export_enum("LEFT:-1", "RIGHT:1") var direction: int = -1
 
 func _init() -> void:	
 	var car = load("res://car_enemy.tscn")

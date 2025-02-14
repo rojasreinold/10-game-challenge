@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("move_down"):
 		velocity.y -= speed
 	elif Input.is_action_just_pressed("move_right"):
-		velocity.x -= speed		
+		velocity.x -= speed
 	elif Input.is_action_just_pressed("move_left"):
 		velocity.x += speed
 				

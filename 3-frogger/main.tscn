@@ -43,12 +43,16 @@ direction = 1
 
 [node name="EnemySPL2" parent="." instance=ExtResource("5_0droq")]
 position = Vector2(216, 200)
-direction = -1
 
 [node name="EnemySPL3" parent="." instance=ExtResource("5_0droq")]
 position = Vector2(216, 184)
-direction = -1
 
 [node name="EnemySPL4" parent="." instance=ExtResource("5_0droq")]
 position = Vector2(-8, 168)
 direction = 1
+
+[node name="EnemySPL5" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(217, 153)
+
+[node name="WaterEnemySPL1" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(217, 120)
