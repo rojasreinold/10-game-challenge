@@ -1,22 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckyc547m1ji5c"]
+[gd_scene load_steps=2 format=3 uid="uid://c7kfrm61eyl1a"]
 
-[ext_resource type="Script" path="res://car_enemy.gd" id="1_pi0nm"]
-[ext_resource type="Texture2D" uid="uid://b0chjat0wxtld" path="res://assets/Tilemap/2025-02-10-Frogger-game-tileset.png" id="1_wv8q8"]
+[ext_resource type="PackedScene" uid="uid://ckyc547m1ji5c" path="res://enemy.tscn" id="1_m8wtf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdrrr"]
-size = Vector2(16, 16)
-
-[node name="CarEnemy" type="RigidBody2D"]
-gravity_scale = 0.0
-script = ExtResource("1_pi0nm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vdrrr")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_wv8q8")
-region_enabled = true
-region_rect = Rect2(32, 16, 16, 16)
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="CarEnemy" instance=ExtResource("1_m8wtf")]

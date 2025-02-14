@@ -1,5 +1,9 @@
 extends RigidBody2D
 
+#class_name enemy
+
+var movement: Vector2 = Vector2.ZERO
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +15,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
+func move() -> void:
+	position = Vector2(position.x- 16, position.y)
+	pass
+	
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("removing")
 	queue_free()
