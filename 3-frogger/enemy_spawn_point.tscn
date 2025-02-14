@@ -4,10 +4,11 @@
 
 [node name="EnemySpawnPoint" type="Marker2D"]
 position = Vector2(170, 209)
+gizmo_extents = 8.0
 script = ExtResource("1_sluxj")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-one_shot = true
+wait_time = 4.0
 autostart = true
 
 [node name="MoveTimer" type="Timer" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://b7kmbjbg0mbc0"]
+[gd_scene load_steps=8 format=4 uid="uid://b7kmbjbg0mbc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_f01fw"]
 [ext_resource type="Texture2D" uid="uid://b0chjat0wxtld" path="res://assets/Tilemap/2025-02-10-Frogger-game-tileset.png" id="1_j2r10"]
 [ext_resource type="PackedScene" uid="uid://vsi4a3gn85jp" path="res://frog.tscn" id="2_7twhs"]
 [ext_resource type="PackedScene" uid="uid://dfm3n8sl2obmi" path="res://hud.tscn" id="3_ie53x"]
+[ext_resource type="PackedScene" uid="uid://b66eqxa2nhcxv" path="res://enemy_spawn_point.tscn" id="5_0droq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7yfei"]
 texture = ExtResource("1_j2r10")
@@ -35,3 +36,19 @@ tile_set = SubResource("TileSet_6xhc2")
 position = Vector2(104, 232)
 
 [node name="HUD" parent="." instance=ExtResource("3_ie53x")]
+
+[node name="EnemySPL1" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(-8, 216)
+direction = 1
+
+[node name="EnemySPL2" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(216, 200)
+direction = -1
+
+[node name="EnemySPL3" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(216, 184)
+direction = -1
+
+[node name="EnemySPL4" parent="." instance=ExtResource("5_0droq")]
+position = Vector2(-8, 168)
+direction = 1
