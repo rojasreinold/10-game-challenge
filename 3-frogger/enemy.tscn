@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdrrr"]
 size = Vector2(16, 16)
 
-[node name="Enemy" type="Area2D"]
+[node name="Enemy" type="Area2D" groups=["enemy"]]
 collision_mask = 0
 script = ExtResource("1_mtt2f")
 

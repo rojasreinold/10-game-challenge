@@ -4,6 +4,7 @@ class_name EnemySpawnPoint
 var road_array = Array()
 var water_array = Array()
 @export_enum("LEFT:-1", "RIGHT:1") var direction: int = -1
+@export_enum("ENEMIES", "LOGS") var spawn_type: int = 0
 
 func _init() -> void:	
 	var car = load("res://car_enemy.tscn")
@@ -13,6 +14,7 @@ func _init() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(spawn_type)
 	$SpawnTimer.timeout.connect(spawn_enemy)
 	spawn_enemy()
 

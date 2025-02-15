@@ -1,5 +1,7 @@
 extends Area2D
 signal hit
+var in_water = false
+var on_log = false
 
 @export var speed: int = 16
 # Called when the node enters the scene tree for the first time.
@@ -22,5 +24,12 @@ func _process(delta: float) -> void:
 				
 	position -= velocity
 	
+	if in_water and not on_log:
+		hit.emit()
+	
 func _on_area_entered(area: Area2D) -> void:
-	hit.emit()
+	if area.name == "WaterArea":
+		in_water = true
+	elif "enemy" in area.get_groups():
+		hit.emit()
+	
