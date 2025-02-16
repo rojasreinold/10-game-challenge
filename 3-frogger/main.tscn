@@ -18,7 +18,7 @@ texture = ExtResource("1_j2r10")
 3:2/0 = 0
 1:0/0 = 0
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.35678, 5.91534, 5.82705, 6.00362, 6.09191, -5.73876, -6.44507, -5.73876)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.35678, 5.91534, 5.82705, 6.00362, 6.09191, -5.73876, -5.56218, -5.82705)
 3:0/0 = 0
 0:2/0 = 0
 
@@ -44,9 +44,6 @@ position = Vector2(10, 118)
 position = Vector2(94, -30)
 shape = SubResource("RectangleShape2D_3ftc8")
 
-[node name="Frog" parent="." instance=ExtResource("2_7twhs")]
-position = Vector2(104, 232)
-
 [node name="HUD" parent="." instance=ExtResource("3_ie53x")]
 
 [node name="EnemySPL1" parent="." instance=ExtResource("5_0droq")]
@@ -69,3 +66,6 @@ position = Vector2(217, 153)
 [node name="WaterEnemySPL1" parent="." instance=ExtResource("5_0droq")]
 position = Vector2(217, 120)
 spawn_type = 1
+
+[node name="Frog" parent="." instance=ExtResource("2_7twhs")]
+position = Vector2(104, 232)

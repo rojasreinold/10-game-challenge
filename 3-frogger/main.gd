@@ -18,3 +18,4 @@ func _notification(what):
 func on_frog_hit() -> void:
 	health -= 1
 	$HUD.set_lives(health)
+	$Frog.reset_position()

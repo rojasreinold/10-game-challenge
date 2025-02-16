@@ -1,12 +1,14 @@
 extends Area2D
 signal hit
-var in_water = false
-var on_log = false
+var in_water: bool = false
+var on_log: bool = false
+var DEFAULT_POSITION: Vector2 = position
 
 @export var speed: int = 16
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 	
 
 
@@ -30,6 +32,16 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "WaterArea":
 		in_water = true
+	if "water_log" in area.get_groups():
+		on_log = true
 	elif "enemy" in area.get_groups():
 		hit.emit()
 	
+func _on_area_exited(area: Area2D) -> void:
+	if "water_log" in area.get_groups():
+		on_log = false
+		
+func reset_position() -> void:
+	position = DEFAULT_POSITION
+	in_water = false
+	on_log = false

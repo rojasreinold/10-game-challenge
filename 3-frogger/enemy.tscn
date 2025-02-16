@@ -20,3 +20,5 @@ region_enabled = true
 region_rect = Rect2(32, 16, 16, 16)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(2, 2)
+rect = Rect2(-10, -10, 16, 16)

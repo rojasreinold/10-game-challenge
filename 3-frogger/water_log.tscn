@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://iaiouxnrdbx8"]
+
+[ext_resource type="Texture2D" uid="uid://b0chjat0wxtld" path="res://assets/Tilemap/2025-02-10-Frogger-game-tileset.png" id="1_qu62w"]
+[ext_resource type="Script" path="res://water_log.gd" id="1_xl00v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf1k6"]
+size = Vector2(48, 16)
+
+[node name="WaterLog" type="Area2D" groups=["water_log"]]
+script = ExtResource("1_xl00v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_qu62w")
+region_enabled = true
+region_rect = Rect2(16, 32, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xf1k6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-14, 2)
+rect = Rect2(-10, -10, 48, 16)
