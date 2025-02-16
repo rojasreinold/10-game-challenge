@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxydaq2k3kimf" path="res://assets/2025-02-10-Frogger-game.png" id="2_tx547"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b8qo"]
-size = Vector2(14.1727, 14.0066)
+size = Vector2(4.5555, 4.50211)
 
 [node name="Frog" type="Area2D"]
 position = Vector2(104, 232)
@@ -12,7 +12,7 @@ scale = Vector2(0.123477, 0.124941)
 script = ExtResource("2_q08d0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.000183105, 0.00012207)
+position = Vector2(-2.67029e-05, -4.48227e-05)
 scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_8b8qo")
 

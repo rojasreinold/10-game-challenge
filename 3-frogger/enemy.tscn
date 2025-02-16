@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0chjat0wxtld" path="res://assets/Tilemap/2025-02-10-Frogger-game-tileset.png" id="2_1mgei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdrrr"]
-size = Vector2(16, 16)
+size = Vector2(14, 14)
 
 [node name="Enemy" type="Area2D" groups=["enemy"]]
 collision_mask = 0
