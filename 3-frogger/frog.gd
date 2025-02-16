@@ -40,6 +40,8 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_area_exited(area: Area2D) -> void:
 	if "water_log" in area.get_groups():
 		on_log = false
+	if area.name == "WaterArea":
+		in_water = false
 		
 func reset_position() -> void:
 	position = DEFAULT_POSITION
