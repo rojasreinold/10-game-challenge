@@ -34,6 +34,8 @@ func _on_area_entered(area: Area2D) -> void:
 		in_water = true
 	if "water_log" in area.get_groups():
 		on_log = true
+	if "LilyPad" in area.get_groups():
+		lilypad_entered(area)
 	elif "enemy" in area.get_groups():
 		hit.emit()
 	
@@ -47,3 +49,11 @@ func reset_position() -> void:
 	position = DEFAULT_POSITION
 	in_water = false
 	on_log = false
+
+func lilypad_entered(area: Area2D):
+	print(area.get_groups())
+	if "full_lilypad" in area.get_groups():
+		print("full_lilypad")
+	else:
+		area.add_to_group("full_lilypad")
+		reset_position()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b7kmbjbg0mbc0"]
+[gd_scene load_steps=10 format=4 uid="uid://b7kmbjbg0mbc0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_f01fw"]
 [ext_resource type="Texture2D" uid="uid://b0chjat0wxtld" path="res://assets/Tilemap/2025-02-10-Frogger-game-tileset.png" id="1_j2r10"]
@@ -28,6 +28,9 @@ sources/0 = SubResource("TileSetAtlasSource_7yfei")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ftc8"]
 size = Vector2(208, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8oe0"]
+size = Vector2(4, 4)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_f01fw")
@@ -86,6 +89,38 @@ spawn_type = 1
 [node name="WaterEnemySPL5" parent="EnemySpawnPoints" instance=ExtResource("5_0droq")]
 position = Vector2(216, 56)
 spawn_type = 1
+
+[node name="Lilies" type="Node" parent="."]
+
+[node name="Lilypad1" type="Area2D" parent="Lilies" groups=["LilyPad"]]
+position = Vector2(24, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lilies/Lilypad1"]
+shape = SubResource("RectangleShape2D_i8oe0")
+
+[node name="Lilypad2" type="Area2D" parent="Lilies" groups=["LilyPad"]]
+position = Vector2(56, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lilies/Lilypad2"]
+shape = SubResource("RectangleShape2D_i8oe0")
+
+[node name="Lilypad3" type="Area2D" parent="Lilies" groups=["LilyPad"]]
+position = Vector2(104, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lilies/Lilypad3"]
+shape = SubResource("RectangleShape2D_i8oe0")
+
+[node name="Lilypad4" type="Area2D" parent="Lilies" groups=["LilyPad"]]
+position = Vector2(136, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lilies/Lilypad4"]
+shape = SubResource("RectangleShape2D_i8oe0")
+
+[node name="Lilypad5" type="Area2D" parent="Lilies" groups=["LilyPad"]]
+position = Vector2(184, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lilies/Lilypad5"]
+shape = SubResource("RectangleShape2D_i8oe0")
 
 [node name="Frog" parent="." instance=ExtResource("2_7twhs")]
 position = Vector2(104, 232)
