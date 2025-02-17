@@ -9,6 +9,7 @@ var DEFAULT_POSITION: Vector2 = position
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
+	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
 	
 
 
@@ -51,9 +52,11 @@ func reset_position() -> void:
 	on_log = false
 
 func lilypad_entered(area: Area2D):
-	print(area.get_groups())
 	if "full_lilypad" in area.get_groups():
 		print("full_lilypad")
 	else:
 		area.add_to_group("full_lilypad")
 		reset_position()
+
+func _on_screen_exited() -> void:
+	hit.emit()
