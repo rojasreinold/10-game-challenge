@@ -25,14 +25,18 @@ func _physics_process(delta: float) -> void:
 	var input_direction_x: int = Input.get_axis("move_left", "move_right")
 	if state in GROUND_STATES and Input.is_action_just_pressed("jump"):
 		state = States.JUMPING
-	elif state in GROUND_STATES and not is_on_floor():
+	elif ((state in GROUND_STATES and not is_on_floor()) or
+		(state == States.JUMPING and velocity.y > 0)
+		):
 		state = States.FALLING
+		
 	elif is_on_floor():
 		if input_direction_x != 0.0:
 			state = States.RUNNING
 		else:
 			state = States.IDLE
-	
+	if state in [States.RUNNING, States.JUMPING, States.FALLING]:
+		velocity.x = input_direction_x * speed
 	
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
