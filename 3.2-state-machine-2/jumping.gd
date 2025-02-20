@@ -15,7 +15,10 @@ func Physics_update(_delta):
 
 	actor.move_and_slide()
 	
-	if actor.is_on_floor() and input_direction == 0:
+	if Input.is_action_just_pressed("jump"):
+		transition_to.emit("DoubleJump")
+	elif actor.is_on_floor() and input_direction == 0:
 		transition_to.emit("Idle")
+
 	elif actor.velocity.y > 0:
 		transition_to.emit("Falling")

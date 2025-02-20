@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://rk5nqyc81ska"]
+[gd_scene load_steps=10 format=3 uid="uid://rk5nqyc81ska"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_ly8dw"]
 [ext_resource type="Script" path="res://idle.gd" id="2_3i672"]
 [ext_resource type="Script" path="res://jumping.gd" id="3_fajkc"]
 [ext_resource type="Script" path="res://falling.gd" id="4_iokbx"]
 [ext_resource type="Script" path="res://running.gd" id="5_8h7de"]
+[ext_resource type="Script" path="res://double_jump.gd" id="6_lyylw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqdxq"]
 size = Vector2(20, 40)
@@ -51,6 +52,9 @@ script = ExtResource("4_iokbx")
 
 [node name="Running" type="Node" parent="Player/StateMachine"]
 script = ExtResource("5_8h7de")
+
+[node name="DoubleJump" type="Node" parent="Player/StateMachine"]
+script = ExtResource("6_lyylw")
 
 [node name="Floor" type="RigidBody2D" parent="."]
 position = Vector2(464, 574)
