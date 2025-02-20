@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://rk5nqyc81ska"]
+[gd_scene load_steps=9 format=3 uid="uid://rk5nqyc81ska"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_ly8dw"]
 [ext_resource type="Script" path="res://idle.gd" id="2_3i672"]
+[ext_resource type="Script" path="res://jumping.gd" id="3_fajkc"]
+[ext_resource type="Script" path="res://falling.gd" id="4_iokbx"]
+[ext_resource type="Script" path="res://running.gd" id="5_8h7de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqdxq"]
 size = Vector2(20, 40)
@@ -16,6 +19,13 @@ size = Vector2(2483, 20)
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(129, 449)
 
+[node name="StateLabel" type="Label" parent="Player"]
+offset_left = -19.0
+offset_top = -43.0
+offset_right = 21.0
+offset_bottom = -20.0
+text = "Idle"
+
 [node name="ColorRect" type="ColorRect" parent="Player"]
 offset_left = -10.0
 offset_top = -20.0
@@ -25,6 +35,22 @@ color = Color(0.660459, 0.0520242, 0.228142, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_dqdxq")
+
+[node name="StateMachine" type="Node" parent="Player" node_paths=PackedStringArray("current_state")]
+script = ExtResource("1_ly8dw")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="Player/StateMachine"]
+script = ExtResource("2_3i672")
+
+[node name="Jumping" type="Node" parent="Player/StateMachine"]
+script = ExtResource("3_fajkc")
+
+[node name="Falling" type="Node" parent="Player/StateMachine"]
+script = ExtResource("4_iokbx")
+
+[node name="Running" type="Node" parent="Player/StateMachine"]
+script = ExtResource("5_8h7de")
 
 [node name="Floor" type="RigidBody2D" parent="."]
 position = Vector2(464, 574)
@@ -39,14 +65,6 @@ offset_bottom = 30.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(182.5, 0)
 shape = SubResource("RectangleShape2D_q5r4r")
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
-script = ExtResource("1_ly8dw")
-current_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("actor")]
-script = ExtResource("2_3i672")
-actor = NodePath("../../Player")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 visible = false
