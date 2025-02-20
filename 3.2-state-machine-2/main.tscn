@@ -1,8 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://rk5nqyc81ska"]
+[gd_scene load_steps=6 format=3 uid="uid://rk5nqyc81ska"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_ly8dw"]
+[ext_resource type="Script" path="res://idle.gd" id="2_3i672"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqdxq"]
+size = Vector2(20, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5r4r"]
+size = Vector2(2483, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cafe6"]
 
 [node name="main" type="Node"]
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(129, 449)
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+offset_left = -10.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = 20.0
+color = Color(0.660459, 0.0520242, 0.228142, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_dqdxq")
+
+[node name="Floor" type="RigidBody2D" parent="."]
+position = Vector2(464, 574)
+gravity_scale = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = -704.0
+offset_top = -10.0
+offset_right = 939.0
+offset_bottom = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(182.5, 0)
+shape = SubResource("RectangleShape2D_q5r4r")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("1_ly8dw")
+current_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("2_3i672")
+actor = NodePath("../../Player")
+
+[node name="Player2" type="CharacterBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+shape = SubResource("RectangleShape2D_cafe6")
+
+[node name="ColorRect" type="ColorRect" parent="Player2"]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	current_state.Update(delta)
 	
 func _physics_process(delta: float) -> void:
-	current_state.Update(delta)
+	current_state.Physics_update(delta)
 
 func on_child_transitioned(new_state_name: StringName) -> void:
 	var new_state: State = states.get(new_state_name)
