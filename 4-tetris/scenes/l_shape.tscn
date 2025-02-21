@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0vsy4ubtbi4v"]
+
+[ext_resource type="Script" path="res://scenes/l_shape.gd" id="1_6j8c2"]
+[ext_resource type="PackedScene" uid="uid://dh513lae6kkns" path="res://scenes/block.tscn" id="1_j46yt"]
+
+[node name="LShape" type="Node2D"]
+position = Vector2(16, 16)
+script = ExtResource("1_6j8c2")
+metadata/_edit_horizontal_guides_ = [32.0]
+metadata/_edit_vertical_guides_ = [128.0]
+
+[node name="Block1" parent="." instance=ExtResource("1_j46yt")]
+
+[node name="Block2" parent="." instance=ExtResource("1_j46yt")]
+position = Vector2(32, 0)
+
+[node name="Block3" parent="." instance=ExtResource("1_j46yt")]
+position = Vector2(64, 0)
+
+[node name="Block4" parent="." instance=ExtResource("1_j46yt")]
+position = Vector2(96, 0)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(16, 0)
+node_a = NodePath("../Block1")
+node_b = NodePath("../Block2")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(48, 0)
+node_a = NodePath("../Block2")
+node_b = NodePath("../Block3")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(80, 0)
+node_a = NodePath("../Block3")
+node_b = NodePath("../Block4")
