@@ -3,7 +3,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgsth"]
 size = Vector2(32, 32)
 
-[node name="Block" type="CharacterBody2D" groups=["block"]]
+[node name="Block" type="Area2D" groups=["block"]]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -16.0

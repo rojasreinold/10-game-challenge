@@ -13,7 +13,4 @@ func _process(delta: float) -> void:
 func timer_move_shape() -> void:
 	print("moving")
 	var children: Array[Node] = get_children()
-	for child in children:
-		if "block" in child.get_groups():
-			child.velocity.y = 5000
-			child.move_and_slide()
+	position = position + Vector2(0,32)
