@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rk5nqyc81ska"]
+[gd_scene load_steps=11 format=3 uid="uid://rk5nqyc81ska"]
 
 [ext_resource type="Script" path="res://state_machine.gd" id="1_ly8dw"]
 [ext_resource type="Script" path="res://idle.gd" id="2_3i672"]
@@ -11,9 +11,15 @@
 size = Vector2(20, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5r4r"]
-size = Vector2(2483, 20)
+resource_local_to_scene = true
+size = Vector2(2006, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52qjg"]
+resource_local_to_scene = true
+size = Vector2(200, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cafe6"]
+resource_local_to_scene = true
 
 [node name="main" type="Node"]
 
@@ -69,6 +75,19 @@ offset_bottom = 30.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(182.5, 0)
 shape = SubResource("RectangleShape2D_q5r4r")
+
+[node name="Box" type="RigidBody2D" parent="."]
+position = Vector2(926, 470)
+gravity_scale = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="Box"]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_52qjg")
 
 [node name="Player2" type="CharacterBody2D" parent="."]
 visible = false

@@ -9,7 +9,7 @@ func Enter():
 	actor.velocity.y = 0
 	actor.move_and_slide()
 
-func Physics_update(_delta):
+func Physics_update(_delta: float):
 	if float_jump_stun > 0:
 		float_jump_stun -= _delta
 		if float_jump_stun <= 0:
