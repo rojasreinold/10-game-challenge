@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh513lae6kkns"]
+[gd_scene load_steps=3 format=3 uid="uid://dh513lae6kkns"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_rj4ae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgsth"]
 size = Vector2(32, 32)
 
 [node name="Block" type="Area2D" groups=["block"]]
+script = ExtResource("1_rj4ae")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -16.0

@@ -8,9 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	if Input.is_action_just_pressed("move_left"):
+		position = position + Vector2(-32, 0)
+	elif Input.is_action_just_pressed("move_right"):
+		position = position + Vector2(32, 0)
+	elif Input.is_action_just_pressed("move_down"):
+		position = position + Vector2(0,32)
+		
 func timer_move_shape() -> void:
-	print("moving")
 	var children: Array[Node] = get_children()
 	position = position + Vector2(0,32)

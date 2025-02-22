@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5p2e0qyhuux4"]
+
+[ext_resource type="Script" path="res://scripts/shape_spawner.gd" id="1_txj34"]
+
+[node name="ShapeSpawner" type="Marker2D"]
+position = Vector2(960, 100)
+script = ExtResource("1_txj34")

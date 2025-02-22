@@ -1,13 +1,68 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjedk8qir4a0n"]
+[gd_scene load_steps=7 format=3 uid="uid://bjedk8qir4a0n"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_q82aq"]
 [ext_resource type="PackedScene" uid="uid://dp8osiarfjea2" path="res://scenes/hud.tscn" id="2_bwloc"]
+[ext_resource type="PackedScene" uid="uid://b5p2e0qyhuux4" path="res://scenes/shape_spawner.tscn" id="3_25og3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxoq2"]
+size = Vector2(20, 666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwfcp"]
+size = Vector2(20, 679.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a07c"]
+size = Vector2(384, 20)
 
 [node name="main" type="Node"]
 script = ExtResource("1_q82aq")
+metadata/_edit_horizontal_guides_ = [100.0]
+metadata/_edit_vertical_guides_ = [800.0, 1120.0]
 
 [node name="HUD" parent="." instance=ExtResource("2_bwloc")]
 
-[node name="ShapeMoveTimer" type="Timer" parent="."]
+[node name="ShapeContainer" type="Marker2D" parent="."]
+position = Vector2(960, 228)
+
+[node name="ContainerWallLeft" type="Area2D" parent="ShapeContainer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeContainer/ContainerWallLeft"]
+position = Vector2(-170, 311)
+shape = SubResource("RectangleShape2D_cxoq2")
+
+[node name="ColorRect" type="ColorRect" parent="ShapeContainer/ContainerWallLeft"]
+offset_left = -168.0
+offset_right = -160.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="ContainerWallRight" type="Area2D" parent="ShapeContainer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeContainer/ContainerWallRight"]
+position = Vector2(171, 309.75)
+shape = SubResource("RectangleShape2D_xwfcp")
+
+[node name="ColorRect" type="ColorRect" parent="ShapeContainer/ContainerWallRight"]
+offset_left = 160.0
+offset_right = 168.0
+offset_bottom = 640.0
+color = Color(0, 0, 0, 1)
+
+[node name="ContainerFloor" type="Area2D" parent="ShapeContainer"]
+
+[node name="ColorRect" type="ColorRect" parent="ShapeContainer/ContainerFloor"]
+offset_left = -168.0
+offset_top = 640.0
+offset_right = 168.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShapeContainer/ContainerFloor"]
+position = Vector2(-3, 650)
+shape = SubResource("RectangleShape2D_1a07c")
+
+[node name="ShapeSpawner" parent="ShapeContainer" instance=ExtResource("3_25og3")]
+position = Vector2(0, -32)
+
+[node name="ShapeMoveTimer" type="Timer" parent="ShapeContainer"]
 wait_time = 2.0
 autostart = true
