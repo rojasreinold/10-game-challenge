@@ -18,3 +18,7 @@ func _process(delta: float) -> void:
 func timer_move_shape() -> void:
 	var children: Array[Node] = get_children()
 	position = position + Vector2(0,32)
+	
+func check_move(direction: Vector2):
+	
+	pass

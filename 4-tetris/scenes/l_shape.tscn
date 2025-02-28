@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0vsy4ubtbi4v"]
+[gd_scene load_steps=4 format=3 uid="uid://d0vsy4ubtbi4v"]
 
 [ext_resource type="Script" path="res://scripts/l_shape.gd" id="1_6j8c2"]
 [ext_resource type="PackedScene" uid="uid://dh513lae6kkns" path="res://scenes/block.tscn" id="1_j46yt"]
 
-[node name="LShape" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhyn2"]
+size = Vector2(127, 32)
+
+[node name="LShape" type="Area2D"]
 position = Vector2(16, 16)
 script = ExtResource("1_6j8c2")
 metadata/_edit_horizontal_guides_ = [32.0]
-metadata/_edit_vertical_guides_ = [128.0]
+metadata/_edit_vertical_guides_ = [127.0]
 
 [node name="Block1" parent="." instance=ExtResource("1_j46yt")]
 
@@ -19,3 +22,7 @@ position = Vector2(64, 0)
 
 [node name="Block4" parent="." instance=ExtResource("1_j46yt")]
 position = Vector2(95, 0)
+
+[node name="TestCollision" type="CollisionShape2D" parent="."]
+position = Vector2(47.5, 0)
+shape = SubResource("RectangleShape2D_rhyn2")
