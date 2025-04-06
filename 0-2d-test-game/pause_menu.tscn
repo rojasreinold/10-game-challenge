@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bfa1fh70afpio"]
 
 [ext_resource type="FontFile" uid="uid://bjcfht4xj8c8j" path="res://fonts/Xolonium-Regular.ttf" id="1_2d4lf"]
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_htr66"]
-[ext_resource type="Script" path="res://music_h_slider.gd" id="3_8i13i"]
-[ext_resource type="Script" path="res://sfxh_slider.gd" id="3_xthus"]
+[ext_resource type="Script" uid="uid://cfk7160roddpn" path="res://pause_menu.gd" id="1_htr66"]
+[ext_resource type="Script" uid="uid://7uou2bely72a" path="res://music_h_slider.gd" id="3_8i13i"]
+[ext_resource type="Script" uid="uid://bqic6act5iwo6" path="res://sfxh_slider.gd" id="3_xthus"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_rep81"]
 action = &"quit_game"
