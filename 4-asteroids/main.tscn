@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkm0gebmrpw33"]
+
+[ext_resource type="Script" uid="uid://ci0b7ln67wgsn" path="res://ship.gd" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+size = Vector2(40, 40)
+
+[node name="Main" type="Node2D"]
+
+[node name="Ship" type="CharacterBody2D" parent="."]
+position = Vector2(462, 307)
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="Ship"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Ship"]
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 5.0
+offset_bottom = -10.0
+color = Color(0.917865, 0, 0.262865, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+shape = SubResource("RectangleShape2D_7dm0k")
