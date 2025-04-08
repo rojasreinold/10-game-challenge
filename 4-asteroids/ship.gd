@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var DECCELERATION = 0.97
 var THRUSTER_ACCELERATION = 600
-var ROTATION_SPEED = 90 # degrees
+var ROTATION_SPEED = 120 # degrees
 var DIRECTION = 270
 
 func _physics_process(delta: float) -> void:
@@ -21,4 +21,3 @@ func _physics_process(delta: float) -> void:
 	var motion = velocity * delta
 
 	move_and_collide(motion)
-	move_toward(1, 1, delta)
