@@ -22,6 +22,9 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(motion)
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_accept") and $BulletTimer.is_stopped():
+		$BulletTimer.start()
 		var bullet_instance = bullet_scene.instantiate()
+		bullet_instance.position = self.position + Vector2( cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50 )
+		bullet_instance.set_direction(DIRECTION)
 		get_parent().add_child(bullet_instance)

@@ -28,3 +28,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
 shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="BulletTimer" type="Timer" parent="Ship"]
+wait_time = 0.75
+one_shot = true
