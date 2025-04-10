@@ -4,12 +4,11 @@ var THRUSTER_ACCELERATION = 600
 var ROTATION_SPEED = 120 # degrees
 var DIRECTION = 270
 
+var bullet_scene: Resource = preload("res://bullet.tscn")
+
 func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("ui_up"):
-		#velocity.y = velocity.y + (delta* THRUSTER_ACCELERATION)
-		#print(delta*THRUSTER_ACCELERATION*DIRECTION)
-		#velocity = velocity + Vector2((delta*THRUSTER_ACCELERATION*DIRECTION.x), (delta*THRUSTER_ACCELERATION*DIRECTION.y))
 		velocity.y = velocity.y + sin(deg_to_rad(DIRECTION))*delta*THRUSTER_ACCELERATION
 		velocity.x = velocity.x + cos(deg_to_rad(DIRECTION))*delta*THRUSTER_ACCELERATION
 	else:
@@ -21,3 +20,8 @@ func _physics_process(delta: float) -> void:
 	var motion = velocity * delta
 
 	move_and_collide(motion)
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_accept"):
+		var bullet_instance = bullet_scene.instantiate()
+		get_parent().add_child(bullet_instance)
