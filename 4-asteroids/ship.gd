@@ -8,7 +8,7 @@ var bullet_scene: Resource = preload("res://bullet.tscn")
 
 func _physics_process(delta: float) -> void:
 	var up_down_movement = Input.get_axis( "ui_down", "ui_up")
-	print(up_down_movement)
+	# print(up_down_movement)
 	if up_down_movement:
 		velocity.y = velocity.y + (sin(deg_to_rad(DIRECTION))*delta*THRUSTER_ACCELERATION *up_down_movement)
 		velocity.x = velocity.x + (cos(deg_to_rad(DIRECTION))*delta*THRUSTER_ACCELERATION *up_down_movement)

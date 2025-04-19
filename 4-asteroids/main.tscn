@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkm0gebmrpw33"]
+[gd_scene load_steps=5 format=3 uid="uid://bkm0gebmrpw33"]
 
+[ext_resource type="Script" uid="uid://da3oepi0c3hpd" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ci0b7ln67wgsn" path="res://ship.gd" id="1_ig7tw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(40, 40)
 
+[sub_resource type="Curve2D" id="Curve2D_ig7tw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -13, -11, 0, 0, 0, 0, 1162, -9, 0, 0, 0, 0, 1168, 664, 0, 0, 0, 0, -12, 656, 0, 0, 0, 0, -8, -8)
+}
+point_count = 5
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
 
 [node name="Ship" type="CharacterBody2D" parent="."]
 position = Vector2(462, 307)
@@ -32,3 +40,16 @@ shape = SubResource("RectangleShape2D_7dm0k")
 [node name="BulletTimer" type="Timer" parent="Ship"]
 wait_time = 0.75
 one_shot = true
+
+[node name="AsteroidPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ig7tw")
+
+[node name="AsteroidPathFollow2D" type="PathFollow2D" parent="AsteroidPath"]
+position = Vector2(-13, -11)
+rotation = 0.00170213
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="AsteroidTimer" to="." method="_on_asteroid_timer_timeout"]
