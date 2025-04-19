@@ -11,4 +11,6 @@ func _on_asteroid_timer_timeout() -> void:
 	print("direction: ", rad_to_deg(direction))
 	var asteroid = asteroid_scene.instantiate()
 	asteroid.set_direction(direction)
+	asteroid.set_position(AsteroidPathFollow.position)
+
 	add_child(asteroid)
