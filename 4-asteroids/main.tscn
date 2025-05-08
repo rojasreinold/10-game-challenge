@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://da3oepi0c3hpd" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ci0b7ln67wgsn" path="res://ship.gd" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://clcrtfs705nnk" path="res://asteroid.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cw75kapat6htg" path="res://asteroid_2.tscn" id="2_h2yge"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 size = Vector2(40, 40)
