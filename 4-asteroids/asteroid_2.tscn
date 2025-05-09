@@ -6,6 +6,8 @@
 size = Vector2(30, 30)
 
 [node name="Asteroid2" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
 gravity_scale = 0.0
 linear_damp_mode = 1
 script = ExtResource("1_yv0hr")
@@ -18,3 +20,7 @@ offset_left = -15.0
 offset_top = -15.0
 offset_right = 15.0
 offset_bottom = 15.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
