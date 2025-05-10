@@ -4,11 +4,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtl8c"]
 
-[node name="Bullet" type="RigidBody2D"]
-collision_layer = 0
-collision_mask = 0
-gravity_scale = 0.0
-linear_damp_mode = 1
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_v7oki")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,3 +17,6 @@ offset_bottom = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rtl8c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

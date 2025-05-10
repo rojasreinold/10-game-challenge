@@ -1,9 +1,10 @@
 extends RigidBody2D
 
 
-var SPEED = 200
+var SPEED = 100
 # cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50
 func set_direction(new_direction):
+	
 	linear_velocity.x = SPEED* cos(new_direction)
 	linear_velocity.y = SPEED * sin(new_direction)
 
@@ -26,5 +27,8 @@ func _physics_process(delta: float) -> void:
 		$JumpTimer.start()
 
 		global_position.y = 32
+func _on_body_entered(body: Node) -> void:
+	print(body.name)
 
-#func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	print(body.name)
