@@ -21,6 +21,23 @@ func _physics_process(delta: float) -> void:
 	var motion = velocity * delta
 
 	move_and_collide(motion)
+	
+	if not $JumpTimer.is_stopped():
+		return
+	var window_size = DisplayServer.window_get_size()
+	if global_position.x < 0:
+		$JumpTimer.start()
+		global_position.x = window_size.x -32
+	elif global_position.x > window_size.x:
+		$JumpTimer.start()
+		global_position.x = 32
+	
+	if global_position.y < 0:
+		$JumpTimer.start()
+		global_position.y = window_size.y -32
+	elif global_position.y > window_size.y :
+		$JumpTimer.start()
+		global_position.y = 32
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and $BulletTimer.is_stopped():
