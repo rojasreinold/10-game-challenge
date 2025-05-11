@@ -15,7 +15,8 @@ func set_direction(new_direction):
 
 
 func _on_area_entered(area: Area2D) -> void:
-	print("area entered") # Replace with function body.
+	if area.is_in_group("enemy"):
+		queue_free()
 
 
 func _on_body_entered(body: Node2D) -> void:

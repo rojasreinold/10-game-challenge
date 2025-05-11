@@ -17,7 +17,7 @@ point_count = 5
 script = ExtResource("1_0xm2m")
 asteroid_scene = ExtResource("2_h2yge")
 
-[node name="Ship" type="CharacterBody2D" parent="."]
+[node name="Ship" type="CharacterBody2D" parent="." groups=["ship"]]
 position = Vector2(462, 307)
 script = ExtResource("1_ig7tw")
 
