@@ -1,0 +1,39 @@
+extends Area2D
+
+
+var DEFAULT_SPEED = 200
+var velocity = Vector2()
+# cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50
+
+func _process(delta: float) -> void:
+	position += velocity * delta
+	
+func set_direction(new_direction):
+	velocity.x = cos(new_direction)
+	velocity.y = sin(new_direction)
+	velocity = velocity.normalized() * DEFAULT_SPEED
+
+
+func _physics_process(delta: float) -> void:
+	if not $JumpTimer.is_stopped():
+		return
+	var window_size = DisplayServer.window_get_size()
+	if position.x < 0:
+		$JumpTimer.start()
+		position.x = window_size.x -8
+	elif position.x > window_size.x:
+		$JumpTimer.start()
+		position.x = 8
+	
+	if position.y < 0:
+		$JumpTimer.start()
+		position.y = window_size.y -8
+	elif position.y > window_size.y :
+		$JumpTimer.start()
+
+		position.y = 8
+
+func _on_area_entered(area: Area2D) -> void:
+	print(area)
+	if area.is_in_group("ship") or area.is_in_group("bullet"):
+		queue_free()

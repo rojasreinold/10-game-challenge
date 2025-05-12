@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ge6057iank7"]
+
+[ext_resource type="Script" uid="uid://cgi8i6n65eh3f" path="res://large_asteroid.gd" id="1_4d73f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d73f"]
+size = Vector2(30, 30)
+
+[node name="LargeAsteroid" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_4d73f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4d73f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

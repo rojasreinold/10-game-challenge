@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3bcc1lpkdk1"]
+
+[ext_resource type="Script" uid="uid://c8mr1is7r6uyk" path="res://medium_asteroid.gd" id="1_3yhqx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3u4g"]
+size = Vector2(30, 30)
+
+[node name="MediumAsteroid" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_3yhqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b3u4g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
