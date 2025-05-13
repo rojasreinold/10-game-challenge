@@ -6,6 +6,8 @@
 size = Vector2(30, 30)
 
 [node name="LargeAsteroid" type="Area2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_4d73f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,9 +18,12 @@ offset_left = -15.0
 offset_top = -15.0
 offset_right = 15.0
 offset_bottom = 15.0
+color = Color(0, 0, 0, 1)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="JumpTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

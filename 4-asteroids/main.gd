@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var asteroid_scene: PackedScene
+@export var asteroid_scene: PackedScene = preload("res://large_asteroid.tscn")
 
 func _on_asteroid_timer_timeout() -> void:
 	var  AsteroidPathFollow: PathFollow2D = $AsteroidPath/AsteroidPathFollow2D

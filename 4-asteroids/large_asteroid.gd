@@ -1,7 +1,9 @@
 extends Area2D
 
+var asteroid_scene: PackedScene = preload("res://medium_asteroid.tscn")
 
 var DEFAULT_SPEED = 200
+var direction
 var velocity = Vector2()
 # cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50
 
@@ -9,6 +11,7 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 	
 func set_direction(new_direction):
+	direction = new_direction
 	velocity.x = cos(new_direction)
 	velocity.y = sin(new_direction)
 	velocity = velocity.normalized() * DEFAULT_SPEED
@@ -34,6 +37,12 @@ func _physics_process(delta: float) -> void:
 		position.y = 8
 
 func _on_area_entered(area: Area2D) -> void:
-	print(area)
 	if area.is_in_group("ship") or area.is_in_group("bullet"):
+		print(area)
+		var new_asteroid = asteroid_scene.instantiate()
+		new_asteroid.set_direction(direction)
+		new_asteroid.set_position(position)
+		
+		get_parent().add_child(new_asteroid)
+
 		queue_free()
