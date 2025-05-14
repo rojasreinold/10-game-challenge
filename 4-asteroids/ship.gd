@@ -1,7 +1,7 @@
 extends CharacterBody2D
 var DECCELERATION = 0.97
-var THRUSTER_ACCELERATION = 600
-var ROTATION_SPEED = 120 # degrees
+var THRUSTER_ACCELERATION = 800
+var ROTATION_SPEED = 180 # degrees
 var DIRECTION = 270
 
 var bullet_scene: Resource = preload("res://bullet.tscn")

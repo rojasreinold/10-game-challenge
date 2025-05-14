@@ -1,8 +1,9 @@
 extends Area2D
 
 var asteroid_scene: PackedScene = preload("res://medium_asteroid.tscn")
+signal ship_hit
 
-var DEFAULT_SPEED = 200
+var DEFAULT_SPEED = 100
 var direction
 var velocity = Vector2()
 # cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50
@@ -46,3 +47,8 @@ func _on_area_entered(area: Area2D) -> void:
 		get_parent().add_child(new_asteroid)
 
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("ship"):
+		ship_hit.emit()
