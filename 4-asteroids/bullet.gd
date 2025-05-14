@@ -1,6 +1,6 @@
 extends Area2D
 
-var DEFAULT_SPEED = 200
+var DEFAULT_SPEED = 300
 var velocity = Vector2()
 # cos(deg_to_rad(DIRECTION))*50, sin(deg_to_rad(DIRECTION))*50
 
