@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var BASE_SPEED: int = 3
+var BASE_SPEED: int = 150
 
 func _process(delta: float) -> void:
 
@@ -12,5 +12,5 @@ func _process(delta: float) -> void:
 		velocity.y += vertical_movement
 
 	velocity = velocity * BASE_SPEED
-	
-	move_and_collide(velocity)
+	print(velocity)
+	move_and_slide()
