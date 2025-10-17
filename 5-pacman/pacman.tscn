@@ -7,7 +7,7 @@
 radius = 16.0312
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8msc"]
-radius = 6.0
+radius = 1.0
 
 [node name="Pacman" type="CharacterBody2D"]
 script = ExtResource("1_hf5wl")
